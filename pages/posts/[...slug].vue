@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <article class="prose">
-      <ContentDoc />
-    </article>
-  </div>
+  <article class="prose max-w-none dark:prose-invert">
+    <ContentDoc />
+  </article>
 </template>
