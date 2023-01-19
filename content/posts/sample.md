@@ -1,5 +1,7 @@
 ---
 title: Sample Page
+description: This is a sample page!
+tags: [Lab]
 ---
 
 # Lorem Ipsum

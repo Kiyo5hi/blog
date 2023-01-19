@@ -1,7 +1,7 @@
 <template>
-  <header class="px-4 h-16 flex flex-row align-middle text-center bg-gray-100 bg-opacity-80 dark:bg-gray-800">
+  <header class="px-4 h-16 flex flex-row align-middle text-center bg-opacity-80 shadow-md">
     <NuxtLink to="/" class="flex-none my-auto">
-      <AppButton class="flex flex-row items-center">
+      <AppButton class="p-2 flex flex-row items-center">
         <span class="mr-2">
           <svg
             class="w-6 h-6 fill-primary"
