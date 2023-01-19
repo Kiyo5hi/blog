@@ -1,5 +1,5 @@
 <template>
-  <AppCard class="p-4">
+  <AppCard class="px-6 py-4">
     <article class="prose max-w-none dark:prose-invert">
       <ContentDoc />
     </article>

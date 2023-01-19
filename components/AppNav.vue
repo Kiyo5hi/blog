@@ -3,8 +3,13 @@
     <NuxtLink to="/">
       Home
     </NuxtLink>
-    <NuxtLink to="/friends">
-      Friends
+    <span>|</span>
+    <NuxtLink to="https://acey.k1yoshi.com">
+      My Love
+    </NuxtLink>
+    <span>|</span>
+    <NuxtLink to="https://k1yoshi.com">
+      About
     </NuxtLink>
   </div>
 </template>

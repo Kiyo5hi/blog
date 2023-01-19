@@ -27,7 +27,7 @@
     </template>
 
     <template #not-found>
-      <p>Nothing is yet posted! Maybe check back later?</p>
+      <div>Nothing is yet posted! Maybe check back later?</div>
     </template>
   </ContentList>
 </template>
