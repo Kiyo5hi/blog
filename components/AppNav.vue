@@ -8,6 +8,10 @@
       My Love
     </NuxtLink>
     <span>|</span>
+    <NuxtLink to="friends">
+      Friends
+    </NuxtLink>
+    <span>|</span>
     <NuxtLink to="https://k1yoshi.com">
       About
     </NuxtLink>

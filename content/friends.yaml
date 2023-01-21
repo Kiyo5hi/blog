@@ -1,0 +1,13 @@
+body:
+  - name: Prof. Zhiqin Lu
+    uri: https://lu.math.uci.edu
+    description: Math professor at UC Irvine
+    profileImage: https://lu.math.uci.edu/favicon.webp
+  - name: Sheey
+    uri: https://archive.sheey.moe/
+    description: Sheey 的小窝 • 杂货铺
+    profileImage: https://sheey-blog-resources.oss-cn-hangzhou.aliyuncs.com/images/avatar.webp
+  - name: 觉
+    uri: https://xdminsy.github.io/
+    description: 觉
+    profileImage: http:s//xdminsy.github.io/i.jpg

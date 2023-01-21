@@ -1,5 +1,6 @@
 <template>
   <ContentList
+    path="posts"
     :query="{
       only: ['title', 'description', '_path'],
     }"
@@ -18,7 +19,7 @@
             </div>
             <div class="flex flex-row justify-end">
               <NuxtLink :to="article._path">
-                <AppButton class="text-blue-500 py-1 px-2">
+                <AppButton class="text-blue-500 py-1 px-2" highlight scale>
                   Read more...
                 </AppButton>
               </NuxtLink>
