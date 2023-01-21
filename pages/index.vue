@@ -16,11 +16,13 @@
             <div class="text-slate-400">
               {{ article.description }}
             </div>
-            <NuxtLink :to="article._path" class="flex flex-row justify-end">
-              <AppButton class="text-blue-500 p-1">
-                Read more...
-              </AppButton>
-            </NuxtLink>
+            <div class="flex flex-row justify-end">
+              <NuxtLink :to="article._path">
+                <AppButton class="text-blue-500 py-1 px-2">
+                  Read more...
+                </AppButton>
+              </NuxtLink>
+            </div>
           </AppCard>
         </li>
       </ul>
@@ -31,3 +33,17 @@
     </template>
   </ContentList>
 </template>
+
+<script setup lang="ts">
+const config = useAppConfig()
+
+useHead({
+  title: `Home | ${config.title}`,
+  meta: [
+    {
+      name: 'description',
+      content: config.description
+    }
+  ]
+})
+</script>

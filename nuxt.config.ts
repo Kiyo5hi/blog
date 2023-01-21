@@ -1,23 +1,27 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  app: {
-    head: {
-      title: "Kiyoshi's Blog"
-    }
-  },
   modules: [
     '@nuxt/content',
-    '@nuxtjs/tailwindcss'
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/color-mode'
   ],
   content: {
     highlight: {
-      theme: 'dark-plus',
+      theme: {
+        default: 'light-plus',
+        dark: 'dark-plus'
+      },
       preload: [
         'c',
         'cpp',
         'java',
-        'python'
+        'python',
+        'vue',
+        'vue-html'
       ]
     }
+  },
+  colorMode: {
+    classSuffix: ''
   }
 })

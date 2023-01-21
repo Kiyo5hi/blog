@@ -3,6 +3,10 @@
         "@nuxtjs/eslint-config-typescript"
     ],
     "rules": {
-        "eol-last": "error"
+        "eol-last": "error",
+        "max-len": [
+            "error",
+            80
+        ]
     }
 }

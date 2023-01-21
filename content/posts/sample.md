@@ -10,8 +10,27 @@ tags: [Lab]
 
 > There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...
 
-```html
-<div></div>
+```vue
+<script>
+export default {
+  data() {
+    return {
+      greeting: 'Hello World!'
+    }
+  }
+}
+</script>
+
+<template>
+  <p class="greeting">{{ greeting }}</p>
+</template>
+
+<style>
+.greeting {
+  color: red;
+  font-weight: bold;
+}
+</style>
 ```
 
 *   [Overview](#overview)
