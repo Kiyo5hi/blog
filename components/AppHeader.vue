@@ -1,6 +1,6 @@
 <template>
-  <header class="px-4 h-16 flex flex-row align-middle text-center bg-opacity-80 shadow-md">
-    <NuxtLink to="/" class="flex-none my-auto">
+  <header class="px-4 h-24 md:h-16 flex flex-col md:flex-row items-center justify-center bg-opacity-80 shadow-md">
+    <NuxtLink to="/">
       <AppButton class="p-2 flex flex-row items-center">
         <span class="mr-2">
           <svg
@@ -16,6 +16,6 @@
         <span class="font-bold text-lg">Kiyoshi's Blog</span>
       </AppButton>
     </NuxtLink>
-    <AppNav />
+    <AppNav class="md:flex-1 md:flex-row md:justify-end" />
   </header>
 </template>

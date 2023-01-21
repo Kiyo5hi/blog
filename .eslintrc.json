@@ -6,7 +6,7 @@
         "eol-last": "error",
         "max-len": [
             "error",
-            80
+            120
         ]
     }
 }
