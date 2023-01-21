@@ -1,32 +1,23 @@
 <template>
   <div
-    class="flex flex-col md:flex-row items-center gap-3 justify-between px-16 pt-8 pb-16
-  text-slate-800 dark:text-slate-400"
+    class="flex flex-col md:flex-row items-center gap-3 justify-around py-8
+         text-slate-400 text-center"
   >
     <span>
       <span>Copyright © 2022 - {{ year }}&nbsp;</span>
-      <NuxtLink
-        class="text-black dark:text-white"
-        :to="config.url"
-      >
+      <StyledLink class="text-black dark:text-white" :to="config.url">
         {{ config.title }}
-      </NuxtLink>
+      </StyledLink>
     </span>
     <span>
       <span>Powered by</span>
-      <NuxtLink
-        class="text-black dark:text-white"
-        to="nuxt.com"
-      >
+      <StyledLink class="text-black dark:text-white" to="https://nuxt.com">
         Nuxt.js
-      </NuxtLink>
+      </StyledLink>
       <span>• Designed by</span>
-      <NuxtLink
-        to="k1yosih.com"
-        class="text-black dark:text-white"
-      >
+      <StyledLink to="https://k1yoshi.com" class="text-black dark:text-white">
         Kiyoshi
-      </NuxtLink>
+      </StyledLink>
     </span>
   </div>
 </template>
