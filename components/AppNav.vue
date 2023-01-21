@@ -8,7 +8,7 @@
       My Love
     </NuxtLink>
     <span>|</span>
-    <NuxtLink to="friends">
+    <NuxtLink to="/friends">
       Friends
     </NuxtLink>
     <span>|</span>

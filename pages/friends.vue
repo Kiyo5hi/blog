@@ -1,7 +1,7 @@
 <template>
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
     <div v-for="friend in friends" :key="friend.name" class="col-span-1 h-32">
-      <NuxtLink :to="friend.uri">
+      <NuxtLink :to="friend.url">
         <AppCard
           class="flex flex-row items-center gap-4 p-4 w-full h-full"
           highlight
@@ -15,7 +15,7 @@
             <div class="text-lg font-bold">
               {{ friend.name }}
             </div>
-            <div class="text-gray-500">
+            <div class="text-slate-400">
               {{ friend.description }}
             </div>
           </div>
@@ -26,5 +26,5 @@
 </template>
 
 <script setup lang="ts">
-const friends = await(await queryContent('friends').findOne()).body
+const friends = await(await queryContent('/friends').findOne()).body
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <header class="px-4 h-24 md:h-16 flex flex-col md:flex-row items-center justify-center bg-opacity-80 shadow-md">
+  <header class="px-4 h-24 md:h-16 flex flex-col md:flex-row items-center justify-center">
     <NuxtLink to="/">
       <AppButton class="p-2 flex flex-row items-center" highlight scale>
         <span class="mr-2">
