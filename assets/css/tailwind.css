@@ -2,21 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    html {
-        scroll-behavior: smooth;
-    }
+html {
+    @apply scroll-smooth;
+}
 
-    html.light {
-        color-scheme: light;
-    }
+html.light {
+    color-scheme: light;
+}
 
-    html.dark {
-        color-scheme: dark;
-    }
+html.dark {
+    color-scheme: dark;
+}
 
-    pre code .line {
-        @apply block;
-        @apply min-h-[1rem];
-    }
+pre code .line {
+    @apply block;
+    @apply min-h-[1rem];
 }

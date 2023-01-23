@@ -40,11 +40,9 @@ const { title, description } = useAppConfig()
 
 useHead({
   title: `Home | ${title}`,
-  meta: [
-    {
-      name: 'description',
-      content: description
-    }
-  ]
+  meta: [{
+    name: 'description',
+    content: description
+  }]
 })
 </script>
