@@ -8,5 +8,8 @@ export default defineAppConfig({
     repoId: 'R_kgDOI0u2OA',
     category: 'General',
     catetoryId: 'DIC_kwDOI0u2OM4CTv99'
+  },
+  htmlAttrs: {
+    lang: 'en'
   }
 })

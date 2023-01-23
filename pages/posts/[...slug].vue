@@ -14,9 +14,13 @@
 <script setup lang="ts">
 const { path } = useRoute()
 const { title } = useAppConfig()
-const { title: postTitle } = (await queryContent(path).findOne())
+const { title: postTitle, description } = (await queryContent(path).findOne())
 
 useHead({
-  title: `${postTitle} | ${title}`
+  title: `${postTitle} | ${title}`,
+  meta: [{
+    name: 'description',
+    value: description
+  }]
 })
 </script>

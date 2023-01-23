@@ -5,15 +5,11 @@
 </template>
 
 <script setup lang="ts">
+const { htmlAttrs } = useAppConfig()
+
 useColorMode()
+
+useHead({
+  htmlAttrs
+})
 </script>
-
-<style>
-.light {
-  color-scheme: light;
-}
-
-.dark {
-  color-scheme: dark;
-}
-</style>
