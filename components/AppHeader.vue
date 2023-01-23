@@ -16,6 +16,6 @@
         <span class="font-bold text-lg">Kiyoshi's Blog</span>
       </AppButton>
     </NuxtLink>
-    <AppNav class="md:flex-1 md:flex-row md:justify-end" />
+    <AppNav class="text-slate-400 md:flex-1 md:flex-row md:justify-end" />
   </header>
 </template>
