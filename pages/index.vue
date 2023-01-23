@@ -36,14 +36,14 @@
 </template>
 
 <script setup lang="ts">
-const config = useAppConfig()
+const { title, description } = useAppConfig()
 
 useHead({
-  title: `Home | ${config.title}`,
+  title: `Home | ${title}`,
   meta: [
     {
       name: 'description',
-      content: config.description
+      content: description
     }
   ]
 })

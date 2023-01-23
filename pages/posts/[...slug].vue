@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="flex flex-col gap-4">
     <AppCard class="px-6 py-4">
       <article class="prose max-w-none dark:prose-invert prose-pre:shadow-md">
         <ContentDoc :head="false" />
       </article>
     </AppCard>
-    <AppCard>
-      Hi
+    <AppCard class="px-6 py-4">
+      <CommentWidget />
     </AppCard>
   </div>
 </template>

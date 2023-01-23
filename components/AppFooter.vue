@@ -5,8 +5,8 @@
   >
     <span>
       <span>Copyright © 2022 - {{ year }}&nbsp;</span>
-      <StyledLink class="text-black dark:text-white" :to="config.url">
-        {{ config.title }}
+      <StyledLink class="text-black dark:text-white" :to="url">
+        {{ title }}
       </StyledLink>
     </span>
     <span>
@@ -24,5 +24,5 @@
 
 <script setup lang=ts>
 const year = new Date().getFullYear()
-const config = useAppConfig()
+const { url, title } = useAppConfig()
 </script>
