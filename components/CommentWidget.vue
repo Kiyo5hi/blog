@@ -1,4 +1,5 @@
 <template>
+  <!-- host prop workaround: https://github.com/giscus/giscus-component/issues/1003 -->
   <Giscus
     :repo="`${giscus.username}/${giscus.repoName}`"
     :repo-id="giscus.repoId"
@@ -13,6 +14,7 @@
     lang="en"
     loading="lazy"
     crossorigin="anonymous"
+    host="https://giscus.app"
   />
 </template>
 
