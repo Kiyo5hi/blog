@@ -1,12 +1,10 @@
 <template>
   <ContentList
-    path="posts"
-    :query="{
-      only: ['title', 'description', '_path'],
-    }"
+    path="/posts"
+    :query="query"
   >
     <template #default="{ list }">
-      <ul class="w-full">
+      <ul class="w-full flex flex-col gap-4">
         <li v-for="article in list" :key="article._path">
           <AppCard class="p-4">
             <div class="text-2xl mb-2">
@@ -36,7 +34,14 @@
 </template>
 
 <script setup lang="ts">
+import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
+
 const { title, description } = useAppConfig()
+const query: QueryBuilderParams = {
+  limit: 5,
+  only: ['title', 'description', '_path'],
+  sort: [{ createdAt: -1 }]
+}
 
 useHead({
   title: `Home | ${title}`,

@@ -1,10 +1,10 @@
 ---
 title: Sample Page
-description: This is a sample page!
-tags: [Lab]
+description: This post is meant to test if a markdown document is correctly rendered and how all the styles are applied. The content is meaningless with some placeholder texts.
+category: Lab
+createdAt: 2023-01-15T00:00-08:00
+updatedAt: 2023-01-27T00:00-08:00
 ---
-
-# Lorem Ipsum
 
 > Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...
 
@@ -68,7 +68,7 @@ _You **can** combine them_
 
 ## Images
 
-![This is a alt text.](/logo.webp "This is a sample image.")
+![This is alt text.](/logo.webp "This is a sample image.")
 
 ## Links
 
@@ -97,4 +97,4 @@ alert(message);
 
 ## Inline code
 
-This web site is using `inline code`.
+This website is using `inline code`.
