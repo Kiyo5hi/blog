@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@giscus/vue': ^2.2.6
+  '@heroicons/vue': ^2.0.14
   '@nuxt/content': ^2.4.2
   '@nuxtjs/color-mode': ^3.2.0
   '@nuxtjs/eslint-config-typescript': ^12.0.0
@@ -14,6 +15,7 @@ specifiers:
 
 devDependencies:
   '@giscus/vue': 2.2.6
+  '@heroicons/vue': 2.0.14
   '@nuxt/content': 2.4.2
   '@nuxtjs/color-mode': 3.2.0
   '@nuxtjs/eslint-config-typescript': 12.0.0_zkdaqh7it7uc4cvz2haft7rc6u
@@ -798,6 +800,12 @@ packages:
       vue: '>=3.2.0'
     dependencies:
       giscus: 1.2.6
+    dev: true
+
+  /@heroicons/vue/2.0.14:
+    resolution: {integrity: sha512-pA1MLZPX0pyZdaQ5OHD/ILE8V/JCXyWvY2BQig7ZnYO7ZFap9sp969Qasn+1VWxnzB5BLWWcYu80OJPCboWo+g==}
+    peerDependencies:
+      vue: '>= 3'
     dev: true
 
   /@humanwhocodes/config-array/0.11.8:
