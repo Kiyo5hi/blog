@@ -23,11 +23,11 @@
 
 <script setup lang="ts">
 const { path } = useRoute()
-const { title } = useAppConfig()
 
-const { title: postTitle, description } = await queryContent('/posts')
+const { description } = await queryContent('/posts')
   .where({ _path: path })
   .findOne()
+
 const [prev, next] = await queryContent('/posts')
   .only(['title', '_path'])
   .sort({ createdAt: -1 })
@@ -42,10 +42,9 @@ function formatDate (date: string) {
 }
 
 useHead({
-  title: `${postTitle} | ${title}`,
   meta: [{
     name: 'description',
-    value: description
+    content: description
   }]
 })
 </script>

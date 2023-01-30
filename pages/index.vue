@@ -36,18 +36,9 @@
 <script setup lang="ts">
 import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 
-const { title, description } = useAppConfig()
 const query: QueryBuilderParams = {
   limit: 5,
   only: ['title', 'description', '_path'],
   sort: [{ createdAt: -1 }]
 }
-
-useHead({
-  title: `Home | ${title}`,
-  meta: [{
-    name: 'description',
-    content: description
-  }]
-})
 </script>

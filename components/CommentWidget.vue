@@ -21,5 +21,5 @@
 <script setup lang="ts">
 import Giscus from '@giscus/vue'
 
-const { giscus } = useAppConfig()
+const { giscus } = useRuntimeConfig().public
 </script>

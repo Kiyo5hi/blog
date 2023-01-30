@@ -27,13 +27,9 @@
 
 <script setup lang="ts">
 const friends = await(await queryContent('/friends').findOne()).body
-const { title } = useAppConfig()
 
-useHead({
-  title: `Friends | ${title}`,
-  meta: [{
-    name: 'description',
-    content: 'List of my friends who also blog.'
-  }]
+definePageMeta({
+  title: 'Friends',
+  description: 'List of my friends who also blog.'
 })
 </script>
