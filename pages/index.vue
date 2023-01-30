@@ -41,4 +41,8 @@ const query: QueryBuilderParams = {
   only: ['title', 'description', '_path'],
   sort: [{ createdAt: -1 }]
 }
+
+definePageMeta({
+  title: 'Home'
+})
 </script>
