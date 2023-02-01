@@ -3,7 +3,7 @@ title: Intro to The Theory of Computation
 description: "Theory of Computation studies three major questions: what problems are computers capable of solving, what resources are needed to solve a problem and are some problems hard than others."
 category: Schoolwork
 createdAt: 2023-01-26T00:00-08:00
-updatedAt: 2023-01-27T00:00-08:00
+updatedAt: 2023-01-31T00:00-08:00
 ---
 
 ## A Problem
@@ -88,3 +88,5 @@ A deterministic finite automaton (DFA) is a directed graph with the following pr
 - Each vertex is either an accept state or not
 
 ![An Example DFA](https://raw.githubusercontent.com/Kiyo5hi/blog-resources/main/images/202301312329544.png)
+
+To be continued...
