@@ -45,7 +45,7 @@ export default defineNuxtConfig({
       titleSeparator: '|',
       giscus: {
         username: 'Kiyo5hi',
-        repoName: 'blog-comments',
+        repoName: 'blog-resources',
         repoId: 'R_kgDOI0u2OA',
         category: 'General',
         catetoryId: 'DIC_kwDOI0u2OM4CTv99'
