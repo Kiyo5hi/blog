@@ -1,5 +1,5 @@
 ---
-title: Intro to The Theory of Computation
+title: Introduction to The Theory of Computation
 description: "Theory of Computation studies three major questions: what problems are computers capable of solving, what resources are needed to solve a problem and are some problems hard than others."
 category: Schoolwork
 createdAt: 2023-01-26T00:00-08:00
