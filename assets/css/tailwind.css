@@ -20,5 +20,5 @@ pre code .line {
 }
 
 .katex-display {
-    @apply bg-slate-700 bg-opacity-50 rounded overflow-x-scroll overflow-y-hidden;
+    @apply overflow-x-auto overflow-y-hidden;
 }

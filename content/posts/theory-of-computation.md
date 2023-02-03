@@ -10,7 +10,7 @@ updatedAt: 2023-01-31T00:00-08:00
 
 The Theory of Computation is about how machines can process [formal languages](https://en.wikipedia.org/wiki/Formal_language); i.e. how we can describe patterns of strings such as `aaa`, `aabaa` so that a machine can read/recognize them.
 
-There are three major problems that you should keep asking:
+There are three major problems that you should keep asking about:
 
 - What problems are computers capable of solving?
 - What resources are needed to solve a problem?
@@ -170,4 +170,87 @@ Similarly, regex can be converted to NFAs using **[structural induction](https:/
 
 ### Non-regular Language
 
-TODO: unfinished...
+A DFA can have some "memory" —— states. A DFA is finite because it can only "remember":
+
+- finitely far in the past
+- finitely much information
+
+In other words, if a computation path visits the same state more than once, the machine cannot tell the difference between the first time and the future times it visited the state.
+
+$L=\{0^n10^n\mid n\geq0\}$ is an example of a non-regular language; there is no way one can design a DFA that recognizes this language. The inability is caused by the variable $n$ that is used twice to control the number of zeros in the front matches the number of zeros at the back.
+
+#### Proof of A Non-regular Language: The Pumping Lemma
+
+Human brains are finite as well; there is no way for one to test all the possible DFAs to prove the non-regularity of a language. However, there is a lemma that can help us.
+
+The pumping lemma says: if $A$ is a regular language, then $\exists$ a number $p$ (the pumping length) where, if $s$ is any string in language $A$ of length at least $p$, then $s$ may be divided into three pieces, $s=xyz$ such that:
+
+- $|y|>0$, AND
+- $\forall \; i\geq 0$, $xy^iz\in A$, AND,
+- $|xy|\leq p$
+
+With these properties, we can easily prove if a language is non-regular.
+
+##### Limitation
+
+Note that in practice, there are non-regular languages that follow the pumping lemma. Therefore, the pumping lemma can only be used to prove the non-regularity and it is never sufficient to prove if any language is regular.
+
+##### Examples and Tricks
+
+###### Example 1
+
+Prove $L=\{0^n1^n\mid n\geq 0\}$ is not regular.
+
+**Claim:** The language $L=\{0^n1^n\mid n\geq 0\}$ is not regular.
+
+**Proof:** Consider an arbitrary positive integer $p$. WTS $p$ is not a pumping length for $L$.
+
+Assume the language $L=\{0^n1^n\mid n\geq 0\}$ is regular.
+
+Consider the string $s=0^p1^p$, $s\in L$, since the language is regular, then $s$ can be pumped.
+
+Apply the pumping lemma, the string can be divided into three parts:
+
+$$
+\begin{align*}
+    s&=xyz \\
+    &=\underbrace{0^i}_x \underbrace{0^j}_y \underbrace{0^k1^p}_z\;\text{where}\;i\geq 0,j>0,k\geq0,i+j+k=p
+\end{align*}
+$$
+
+Then by pumping lemma, we know that $xy^2z\in L$, while $i+2j+k\geq p$.
+
+Thus, $xy^2z$ is a string that has more zeros than ones, so $xy^2z\notin L$. Contradiction!
+
+Therefore, the language $L=\{0^n1^n\mid n\geq 0\}$ is non-regular.
+
+**Trick:** it makes the proof clean and simple to make the first part of the string be length $p$ since there is only one way to split the string.
+
+###### Example 2
+
+Prove $L=\{ww\mid w\in \{0,1\}^*\}$ is not regular.
+
+**Claim:** the language $L=\{ww\mid w\in \{0,1\}^*\}$ is not regular.
+
+**Proof:** Assume the language $L=\{ww\mid w\in \{0,1\}^*\}$ is regular.
+
+Consider the string $0^n10^n1$ where $n\geq 0$.
+
+Apply the pumping lemma, then $\exists\;p:0^p10^p1\in L$.
+
+Let $s=0^p10^p1$, $s$ can be divided into three parts:
+
+$$
+\begin{align*}
+    s&=xyz \\
+    &=\underbrace{0^i}_x \underbrace{0^j}_y \underbrace{0^k10^p1}_z\;\text{where}\;i\geq 0,j>0,k\geq0,i+j+k=p
+\end{align*}
+$$
+
+Then by pumping lemma, we know that $xy^2z\in L$, while $i+2j+k\geq p$.
+
+Thus, $xy^2z$ is a string that has more zeros in the first half than the latter half, so $xy^2z\notin L$. Contradiction!
+
+Therefore, the language $L=\{ww\mid w\in \{0,1\}^*\}$ is non-regular.
+
+**Trick:** when trying to prove a very broad-defined language, we can pick the string pattern in our favor. As long as the picked string follows the defined pattern when proving its non-regularity, pumping can always push it to the original "space" where the language the not defined.
