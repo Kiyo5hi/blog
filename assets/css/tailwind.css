@@ -16,6 +16,9 @@ html.dark {
 }
 
 pre code .line {
-    @apply block;
-    @apply min-h-[1rem];
+    @apply block min-h-[1rem];
+}
+
+.katex-display {
+    @apply bg-slate-700 bg-opacity-50 rounded overflow-x-scroll overflow-y-hidden;
 }
