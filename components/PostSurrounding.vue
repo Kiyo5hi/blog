@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row justify-between text-slate-400">
+  <div class="flex flex-row justify-between text-slate-400 gap-6">
     <div>
       <NuxtLink v-if="prev" :to="prev._path" class="flex flex-row">
         <ChevronLeftIcon class="w-6 h-6" />
