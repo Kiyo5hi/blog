@@ -65,16 +65,6 @@ $$
 
 A regular language is a language that can be described with a **[Regular Expression (RegEx)](#regular-expression-regex)** or recognized by a **[Deterministic Finite Automaton (DFA)](#deterministic-finite-automaton-dfa)** or a **[Nondeterministic Finite Automaton (DFA)](#nondeterministic-finite-automaton-nfa)**.
 
-The above is the definition but in a reversed order. Since there are multiple kinds of languages that we can study, the formal definition goes:
-
-A language is said to be regular if and only if:
-
-- $\exists$ a regular expression that describes it, OR
-- $\exists$ a deterministic finite automaton that recognizes it, OR
-- $\exists$ a nondeterministic finite automaton that recognizes it
-
-#### Properties
-
 A regular language is closed under:
 
 - Union
@@ -95,9 +85,7 @@ $R$ is a regular expression over the alphabet $\Sigma$ if:
 5. $R=(R_1\circ R_2)$, where $R_1$, $R_2$ are themselves regular expressions
 6. $R=(R^*_1)$, where $R_1$ is a regular expression
 
-##### Notation
-
-As mentioned above, a regular expression is a string of symbols that follow particular rules. Moreover, the **alphabet** of allowable symbols you can use for a regular expression is:
+**Notation:** As mentioned above, a regular expression is a string of symbols that follow particular rules. Moreover, the **alphabet** of allowable symbols you can use for a regular expression is:
 
 $$
 \{(,),\cup,\circ,*,\epsilon,\emptyset\}\cup \Sigma
@@ -122,9 +110,7 @@ A deterministic finite automaton is a directed graph with the following properti
 
 ![An Example DFA](https://raw.githubusercontent.com/Kiyo5hi/blog-resources/main/images/202301312329544.png)
 
-##### Notation
-
-Formally, we can define a DFA with a 5-tuple $(Q,\Sigma,\delta,q_0,F)$ where:
+**Notation:** Formally, we can define a DFA with a 5-tuple $(Q,\Sigma,\delta,q_0,F)$ where:
 
 - $Q$ is a finite set called the states
 - $\Sigma$ is a finite set called the alphabet
@@ -152,9 +138,7 @@ A nondeterministic finite automaton has the same properties as a DFA except for 
 - Have any number of edges
 - Have epsilon (the empty string $\epsilon$) transitions
 
-##### Notation:
-
-Formally, we can define an NFA with a 5-tuple $(Q,\Sigma,\delta,q_0,F)$ where:
+**Notation:** Formally, we can define an NFA with a 5-tuple $(Q,\Sigma,\delta,q_0,F)$ where:
 
 - $Q$ is a finite set called the states
 - $\Sigma$ is a finite set called the alphabet
@@ -191,15 +175,9 @@ The pumping lemma says: if $A$ is a regular language, then $\exists$ a number $p
 
 With these properties, we can easily prove if a language is non-regular.
 
-##### Limitation
+**Limitation:** Note that in practice, there are non-regular languages that follow the pumping lemma. Therefore, the pumping lemma can only be used to prove the non-regularity and it is never sufficient to prove if any language is regular.
 
-Note that in practice, there are non-regular languages that follow the pumping lemma. Therefore, the pumping lemma can only be used to prove the non-regularity and it is never sufficient to prove if any language is regular.
-
-##### Examples and Tricks
-
-###### Example 1
-
-Prove $L=\{0^n1^n\mid n\geq 0\}$ is not regular.
+Example 1: Prove $L=\{0^n1^n\mid n\geq 0\}$ is not regular.
 
 **Claim:** The language $L=\{0^n1^n\mid n\geq 0\}$ is not regular.
 
@@ -226,9 +204,7 @@ Therefore, the language $L=\{0^n1^n\mid n\geq 0\}$ is non-regular.
 
 **Trick:** it makes the proof clean and simple to make the first part of the string be length $p$ since there is only one way to split the string.
 
-###### Example 2
-
-Prove $L=\{ww\mid w\in \{0,1\}^*\}$ is not regular.
+Example 2: Prove $L=\{ww\mid w\in \{0,1\}^*\}$ is not regular.
 
 **Claim:** the language $L=\{ww\mid w\in \{0,1\}^*\}$ is not regular.
 
@@ -254,3 +230,17 @@ Thus, $xy^2z$ is a string that has more zeros in the first half than the latter 
 Therefore, the language $L=\{ww\mid w\in \{0,1\}^*\}$ is non-regular.
 
 **Trick:** when trying to prove a very broad-defined language, we can pick the string pattern in our favor. As long as the picked string follows the defined pattern when proving its non-regularity, pumping can always push it to the original "space" where the language the not defined.
+
+### Context-free Language
+
+A context-free language is a language that can be recognized by a **[Context-free Grammar (CFG)](#context-free-grammar-cfg)** or a **[Pushdown Automaton (PDA)](#pushdown-automaton-pda)**.
+
+A context-free language is closed under:
+
+- Union
+- Concatenation
+- Kleene Star
+
+#### Context-free Grammar (CFG)
+
+#### Pushdown Automaton (PDA)
