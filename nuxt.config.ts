@@ -60,7 +60,8 @@ export default defineNuxtConfig({
         'java',
         'python',
         'vue',
-        'vue-html'
+        'vue-html',
+        'ini'
       ]
     },
     markdown: {
