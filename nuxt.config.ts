@@ -82,6 +82,10 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
+      profile: {
+        name: 'Kiyoshi',
+        avatar: 'https://avatars.githubusercontent.com/u/44930252?v=4'
+      },
       siteUrl: 'https://blog.k1yoshi.com/',
       siteName: 'Kiyoshi\'s Blog',
       siteDescription: 'Kiyoshi\'s Blog - sharing knowledge in ' +

@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-slate-200 dark:bg-slate-900 dark:text-white">
     <AppHeader id="top" class="bg-white dark:bg-slate-800 bg-opacity-80 shadow-md" />
-    <div class="lg:w-[1024px] mx-auto p-4">
+    <div class="mx-auto lg:w-[1024px] p-4">
       <slot />
     </div>
     <AppFooter class="bg-white dark:bg-slate-800 bg-opacity-80 shadow-md" />

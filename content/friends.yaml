@@ -2,12 +2,12 @@ body:
   - name: Prof. Zhiqin Lu
     url: https://lu.math.uci.edu
     description: Math professor at UC Irvine
-    profileImage: https://lu.math.uci.edu/favicon.webp
+    avatar: https://lu.math.uci.edu/favicon.webp
   - name: Sheey
     url: https://archive.sheey.moe/
     description: Sheey 的小窝 • 杂货铺
-    profileImage: https://avatars.githubusercontent.com/u/13375959?v=4
+    avatar: https://avatars.githubusercontent.com/u/13375959?v=4
   - name: 觉
     url: https://xdminsy.github.io/
     description: 觉
-    profileImage: https://avatars.githubusercontent.com/u/9005053?v=4
+    avatar: https://avatars.githubusercontent.com/u/9005053?v=4
