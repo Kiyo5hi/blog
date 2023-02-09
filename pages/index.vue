@@ -4,7 +4,7 @@
     :query="query"
   >
     <template
-      #default="{ list }: {list: Array<{
+      #default="{ list: posts }: {list: Array<{
       title: string
       _path: string
       description: string
@@ -12,17 +12,17 @@
       }>}"
     >
       <div class="flex flex-col gap-4">
-        <AppCard v-for="article in list" :key="article._path" class="p-4">
+        <AppCard v-for="post in posts" :key="post._path" class="p-4">
           <div class="text-2xl mb-2">
-            <NuxtLink :to="article._path">
-              {{ article.title }}
+            <NuxtLink :to="post._path">
+              {{ post.title }}
             </NuxtLink>
           </div>
           <div class="text-slate-400">
-            {{ article.description }}
+            {{ post.description }}
           </div>
           <div class="flex flex-row justify-end">
-            <NuxtLink :to="article._path">
+            <NuxtLink :to="post._path">
               <AppButton class="text-blue-500 py-1 px-2" highlight scale>
                 Read more...
               </AppButton>
@@ -32,13 +32,13 @@
         <UserProfile :name="name" :avatar="avatar" is-vertical>
           <div class="max-w-sm mx-auto flex flex-row gap-4 items-center justify-evenly">
             <div>
-              <div>Articles</div>
-              <div>{{ list.length }}</div>
+              <div>Posts</div>
+              <div>{{ posts.length }}</div>
             </div>
             <div>
               <div>Categories</div>
               <div>
-                {{ (new Set(list.map(({category}) => category))).size }}
+                {{ (new Set(posts.map(({category}) => category))).size }}
               </div>
             </div>
           </div>

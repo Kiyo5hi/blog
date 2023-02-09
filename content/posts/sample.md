@@ -2,8 +2,6 @@
 title: Sample Page
 description: This post is meant to test if a markdown document is correctly rendered and how all the styles are applied. The content is meaningless with some placeholder texts.
 category: Lab
-createdAt: 2023-01-15T00:00-08:00
-updatedAt: 2023-01-27T00:00-08:00
 ---
 
 > Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...

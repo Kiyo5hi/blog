@@ -2,7 +2,7 @@
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
     <div v-for="friend in friends" :key="friend.name" class="col-span-1 h-32">
       <NuxtLink :to="friend.url">
-        <UserProfile :name="friend.name" :avatar="friend.avatar" :description="friend.description" />
+        <UserProfile highlight :name="friend.name" :avatar="friend.avatar" :description="friend.description" />
       </NuxtLink>
     </div>
   </div>

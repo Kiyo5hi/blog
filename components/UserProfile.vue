@@ -6,7 +6,6 @@
       'flex-col': isVertical,
       'text-center': isVertical
     }"
-    highlight
   >
     <img
       class="h-24 w-24 object-fit rounded-full"
