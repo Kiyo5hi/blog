@@ -30,12 +30,12 @@
           </div>
         </AppCard>
         <UserProfile :name="name" :avatar="avatar" is-vertical>
-          <div class="max-w-sm mx-auto flex flex-row gap-4 items-center justify-evenly">
-            <div>
+          <div class="mx-auto mt-4 flex flex-row gap-2 items-center justify-center">
+            <div class="w-24">
               <div>Posts</div>
               <div>{{ posts.length }}</div>
             </div>
-            <div>
+            <div class="w-24">
               <div>Categories</div>
               <div>
                 {{ (new Set(posts.map(({category}) => category))).size }}
