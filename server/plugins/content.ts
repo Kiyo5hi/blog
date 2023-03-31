@@ -9,8 +9,8 @@ export default defineNitroPlugin((nitroApp) => {
         file: file._id.replaceAll(':', '/')
       })
 
-      file.createdAt = log.all.at(-1)!.date
-      file.updatedAt = log.latest!.date
+      file.createdAt = log.all.at(-1)?.date || new Date().toISOString()
+      file.updatedAt = log.latest?.date || new Date().toISOString()
     }
   })
 })

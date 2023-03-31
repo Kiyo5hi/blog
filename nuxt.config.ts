@@ -14,7 +14,8 @@ export default defineNuxtConfig({
       // Ref: https://github.com/nuxt/content/issues/949
       // Ref: https://github.com/nuxt/content/issues/1774
       isCustomElement: (tag) => {
-        const tags = ['math',
+        const tags = [
+          'math',
           'annotation',
           'semantics',
           'mtext',
@@ -89,7 +90,7 @@ export default defineNuxtConfig({
       siteUrl: 'https://blog.k1yoshi.com/',
       siteName: 'Kiyoshi\'s Blog',
       siteDescription: 'Kiyoshi\'s Blog - sharing knowledge in ' +
-      'programming and all sort of things related to computer science.',
+        'programming and all sort of things related to computer science.',
       language: 'en-US',
       titleSeparator: '|',
       giscus: {
