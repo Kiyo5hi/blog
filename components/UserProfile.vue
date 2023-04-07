@@ -9,7 +9,7 @@
   >
     <img
       class="h-24 w-24 object-fit rounded-full"
-      :src="avatar"
+      :src="avatar || `https://ui-avatars.com/api/?name=${encodeURI(name)}`"
       :alt="`${name}'s profile picture'`"
     >
     <div class="flex-1 h-full w-full">
@@ -29,11 +29,12 @@
 <script lang="ts" setup>
 withDefaults(defineProps<{
     name: string,
-    avatar: string,
+    avatar?: string,
     description?: string
     isVertical?: boolean
 }>(), {
   description: undefined,
-  isVertical: false
+  isVertical: false,
+  avatar: undefined
 })
 </script>
