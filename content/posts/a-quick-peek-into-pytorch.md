@@ -1,7 +1,7 @@
 ---
 title: A Quick Peek into PyTorch
-description: Recently I took a course in computer vision. I used to work on big data for a while, and TensorFlow was used during that time, and I have no experience at all with PyTorch. Therefore, I built a dog breed classifier with PyTorch.
-category: Technology
+excerpt: Recently I took a course in computer vision. I used to work on big data for a while, and TensorFlow was used during that time, and I have no experience at all with PyTorch. Therefore, I built a dog breed classifier with PyTorch.
+category: Tech
 ---
 
 ## Google Colab vs Kaggle
@@ -57,7 +57,7 @@ I will be implementing these step by step.
 
 ### Constants
 
-As mentioned above as hyperparameters, I have to define the `BATCH_SIZE` and `EPOCHS` for this model. Additionally, PyTorch uses a [device](https://pytorch.org/docs/stable/tensor_attributes.html#torch.device) to control where does computation on tensors takes place, so I chose my default device for training here:
+As mentioned above as hyperparameters, I have to define the `BATCH_SIZE` and `EPOCHS` for this model. Additionally, PyTorch uses a [device](https://pytorch.org/docs/stable/tensor_attributes.html#torch.device) to control where computation on tensors takes place, so I chose my default device for training here:
 
 ```python
 import torch

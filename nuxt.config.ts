@@ -66,7 +66,7 @@ export default defineNuxtConfig({
       ]
     },
     markdown: {
-      remarkPlugins: ['remark-math'],
+      remarkPlugins: ['remark-math', 'remark-reading-time'],
       rehypePlugins: ['rehype-katex']
     }
   },

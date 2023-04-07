@@ -4,12 +4,7 @@
     :query="query"
   >
     <template
-      #default="{ list: posts }: {list: Array<{
-      title: string
-      _path: string
-      description: string
-      category: string
-      }>}"
+      #default="{ list: posts }: {list: Array<ParsedContent>}"
     >
       <div class="flex flex-col gap-4">
         <AppCard v-for="post in posts" :key="post._path" class="p-4">
@@ -19,7 +14,7 @@
             </NuxtLink>
           </div>
           <div class="text-slate-400">
-            {{ post.description }}
+            {{ post.excerpt }}
           </div>
           <div class="flex flex-row justify-end">
             <NuxtLink :to="post._path">
@@ -53,10 +48,10 @@
 </template>
 
 <script setup lang="ts">
-import type { QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
+import type { ParsedContent, QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 
 const query: QueryBuilderParams = {
-  only: ['title', 'description', '_path', 'category'],
+  only: ['title', 'excerpt', '_path', 'category'],
   sort: [{ createdAt: -1 }]
 }
 

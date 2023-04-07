@@ -1,7 +1,7 @@
 ---
 title: Introduction to The Theory of Computation
-description: How do you define a computation? How do you define a programming language? How can you tell if a programming language can implement all kinds of algorithms to solve problems?
-category: Schoolwork
+excerpt: How do you define a computation? How do you define a programming language? How can you tell if a programming language can implement all kinds of algorithms to solve problems?
+category: Academic
 ---
 
 ## Introduction

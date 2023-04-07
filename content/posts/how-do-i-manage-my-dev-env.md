@@ -1,7 +1,7 @@
 ---
 title: How Do I Manage My Development Environment
-description: While my development environment gets more complicated than ever before, what is a smart way of managing this?
-category: Technology
+excerpt: While my development environment gets more complicated than ever before, what is a smart way of managing this?
+category: Tech
 ---
 
 When I was using my old Dell XPS 15, I was confronted with the issue that the battery died so fast that the battery life could not last for more than 3 hours of programming. I knew there was something wrong with my laptop on its own, computation-intensive tasks and countless energy-inefficient apps, however, drained the battery fast.
