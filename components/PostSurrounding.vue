@@ -1,19 +1,19 @@
 <template>
-  <div class="flex flex-row justify-between text-slate-400 gap-6">
-    <div>
-      <NuxtLink v-if="prev" :to="prev._path" class="flex flex-row">
-        <ChevronLeftIcon class="w-6 h-6" />
-        <span>
+  <div class="flex flex-row justify-between text-slate-400 gap-3">
+    <div class="flex-1 my-auto">
+      <NuxtLink v-if="prev" :to="prev._path" class="flex flex-row justify-start">
+        <ChevronLeftIcon class="w-6 h-6 my-auto" />
+        <div class="text-left w-5/6">
           {{ prev.title }}
-        </span>
+        </div>
       </NuxtLink>
     </div>
-    <div>
-      <NuxtLink v-if="next" :to="next._path" class="flex flex-row">
-        <span>
+    <div class="flex-1 my-auto">
+      <NuxtLink v-if="next" :to="next._path" class="flex flex-row justify-end align-middle">
+        <div class="text-right w-4/5">
           {{ next.title }}
-        </span>
-        <ChevronRightIcon class="w-6 h-6" />
+        </div>
+        <ChevronRightIcon class="w-6 h-6 my-auto" />
       </NuxtLink>
     </div>
   </div>
