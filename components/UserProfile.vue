@@ -9,7 +9,7 @@
   >
     <img
       class="h-24 w-24 object-fit rounded-full"
-      :src="avatar || `https://ui-avatars.com/api/?name=${encodeURI(name)}`"
+      :src="avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}`"
       :alt="`${name}'s profile picture'`"
     >
     <div class="flex-1 h-full w-full">
