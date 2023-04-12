@@ -2,7 +2,7 @@
   <div class="flex flex-col gap-4">
     <AppCard class="px-6 py-4">
       <article class="prose max-w-none dark:prose-invert prose-pre:shadow-md">
-        <ContentDoc v-slot="{ doc }: {doc : ParsedContent}" :head="false">
+        <ContentDoc v-slot="{ doc }: { doc: ParsedContent }" :head="false">
           <h1>{{ doc.title }}</h1>
           <p class="text-slate-400 flex flex-row gap-2">
             <span>{{ formatDate(doc.createdAt) }}</span>
@@ -28,7 +28,7 @@ import { ParsedContent } from '@nuxt/content/dist/runtime/types'
 
 const { path } = useRoute()
 
-const { description } = await queryContent('/posts')
+const { title, excerpt } = await queryContent('/posts')
   .where({ _path: path })
   .findOne()
 
@@ -47,9 +47,13 @@ function formatDate (date: string) {
 }
 
 useHead({
+  title,
   meta: [{
+    name: 'title',
+    content: title
+  }, {
     name: 'description',
-    content: description
+    content: excerpt
   }]
 })
 </script>
