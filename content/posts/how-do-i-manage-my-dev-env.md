@@ -1,6 +1,6 @@
 ---
 title: How Do I Manage My Development Environment
-excerpt: While my development environment gets more complicated than ever before, what is a smart way of managing this?
+description: While my development environment gets more complicated than ever before, what is a smart way of managing this?
 category: Tech
 ---
 

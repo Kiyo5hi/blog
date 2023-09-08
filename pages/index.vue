@@ -14,7 +14,7 @@
             </NuxtLink>
           </div>
           <div class="text-slate-400">
-            {{ post.excerpt }}
+            {{ post.description }}
           </div>
           <div class="flex flex-row justify-end">
             <NuxtLink :to="post._path">
@@ -51,7 +51,7 @@
 import type { ParsedContent, QueryBuilderParams } from '@nuxt/content/dist/runtime/types'
 
 const query: QueryBuilderParams = {
-  only: ['title', 'excerpt', '_path', 'category'],
+  only: ['title', 'description', '_path', 'category'],
   sort: [{ createdAt: -1 }]
 }
 

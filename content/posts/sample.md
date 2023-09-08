@@ -1,6 +1,6 @@
 ---
 title: Sample Page
-excerpt: This post is meant to test if a markdown document is correctly rendered and how all the styles are applied. The content is meaningless with some placeholder texts.
+description: This post is meant to test if a markdown document is correctly rendered and how all the styles are applied. The content is meaningless with some placeholder texts.
 category: Lab
 ---
 

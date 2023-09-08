@@ -1,6 +1,6 @@
 ---
 title: A Quick Peek into PyTorch
-excerpt: Recently I took a course in computer vision. I used to work on big data for a while, and TensorFlow was used during that time, and I have no experience at all with PyTorch. Therefore, I built a dog breed classifier with PyTorch.
+description: Recently I took a course in computer vision. I used to work on big data for a while, and TensorFlow was used during that time, and I have no experience at all with PyTorch. Therefore, I built a dog breed classifier with PyTorch.
 category: Tech
 ---
 
