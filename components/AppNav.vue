@@ -15,7 +15,7 @@ const navItems = [{
   url: '/'
 }, {
   name: 'My Love',
-  url: 'https://acey.kiyo5hi.com'
+  url: 'https://gmwe.kiyo5hi.com'
 }, {
   name: 'Friends',
   url: '/friends'
