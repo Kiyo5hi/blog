@@ -15,12 +15,12 @@ const navItems = [{
   url: '/'
 }, {
   name: 'My Love',
-  url: 'https://acey.k1yoshi.com'
+  url: 'https://acey.kiyo5hi.com'
 }, {
   name: 'Friends',
   url: '/friends'
 }, {
   name: 'About',
-  url: 'https://k1yoshi.com'
+  url: 'https://kiyo5hi.com'
 }]
 </script>

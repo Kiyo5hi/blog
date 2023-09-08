@@ -15,7 +15,7 @@
         Nuxt.js
       </StyledLink>
       <span>• Designed by</span>
-      <StyledLink to="https://k1yoshi.com" class="text-black dark:text-white">
+      <StyledLink to="https://kiyo5hi.com" class="text-black dark:text-white">
         Kiyoshi
       </StyledLink>
     </span>

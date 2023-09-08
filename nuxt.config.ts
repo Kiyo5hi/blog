@@ -87,7 +87,7 @@ export default defineNuxtConfig({
         name: 'Kiyoshi',
         avatar: 'https://avatars.githubusercontent.com/u/44930252?v=4'
       },
-      siteUrl: 'https://blog.k1yoshi.com/',
+      siteUrl: 'https://blog.kiyo5hi.com/',
       siteName: 'Kiyoshi\'s Blog',
       siteDescription: 'Kiyoshi\'s Blog - sharing knowledge in ' +
         'programming and all sort of things related to computer science.',
