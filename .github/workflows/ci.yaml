@@ -18,12 +18,15 @@ jobs:
     steps:
       - uses: actions/setup-node@v3
         with:
-          node-version: lts/*
+          node-version: 24.22.2
       - name: Checkout code
         uses: actions/checkout@v3
-      - name: Install ESLint
-        run: npm install
+      - name: Install locked dependencies
+        run: |
+          corepack enable pnpm
+          corepack prepare pnpm@8.15.9 --activate
+          pnpm install --frozen-lockfile
       - name: Build the Project
-        run: npm run build
+        run: pnpm run build
       - name: Run ESLint
-        run: npm run lint
+        run: pnpm run lint
