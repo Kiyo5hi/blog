@@ -20,6 +20,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # Post dates come from git history at build time
+          fetch-depth: 0
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
