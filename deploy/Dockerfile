@@ -5,7 +5,7 @@ WORKDIR /build
 RUN corepack enable pnpm && \
     pnpm install --frozen-lockfile && pnpm run check && pnpm run build && pnpm test
 
-FROM docker.io/library/caddy:2.11.4@sha256:df7f1c2fb114453b951de51a98efc010db1655a92c2e86be6706714e2417a78d AS prod
+FROM docker.io/library/caddy:2.11.8@sha256:4fcafa98afd1c2e642e353e3c5cf9ddbe892fcee14bc990e7ba2c5b78e51f9cf AS prod
 
 COPY --from=build --chown=10001:10001 /build/dist/ /srv/
 COPY --chown=10001:10001 deploy/Caddyfile /etc/caddy/Caddyfile
