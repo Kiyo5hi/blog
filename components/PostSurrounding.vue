@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-row justify-between text-slate-400 gap-3">
     <div class="flex-1 my-auto">
-      <NuxtLink v-if="prev" :to="prev._path" class="flex flex-row justify-start">
+      <NuxtLink v-if="prev" :to="prev.path" class="flex flex-row justify-start">
         <ChevronLeftIcon class="w-6 h-6 my-auto" />
         <div class="text-left w-5/6">
           {{ prev.title }}
@@ -9,7 +9,7 @@
       </NuxtLink>
     </div>
     <div class="flex-1 my-auto">
-      <NuxtLink v-if="next" :to="next._path" class="flex flex-row justify-end align-middle">
+      <NuxtLink v-if="next" :to="next.path" class="flex flex-row justify-end align-middle">
         <div class="text-right w-4/5">
           {{ next.title }}
         </div>
@@ -20,11 +20,11 @@
 </template>
 
 <script setup lang="ts">
+import type { ContentNavigationItem } from '@nuxt/content'
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/24/outline'
-import { ParsedContent } from '@nuxt/content/dist/runtime/types'
 
 defineProps<{
-    prev: Pick<ParsedContent, string> | null
-    next: Pick<ParsedContent, string> | null
+  prev: ContentNavigationItem | null
+  next: ContentNavigationItem | null
 }>()
 </script>

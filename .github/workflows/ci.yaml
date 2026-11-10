@@ -24,7 +24,6 @@ jobs:
       - name: Install locked dependencies
         run: |
           corepack enable pnpm
-          corepack prepare pnpm@8.15.9 --activate
           pnpm install --frozen-lockfile
       - name: Build the Project
         run: pnpm run build

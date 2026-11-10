@@ -9,10 +9,14 @@
 </template>
 
 <script setup lang="ts">
-const friends = await(await queryContent('/friends').findOne()).body
+const { data } = await useAsyncData('friends', () => queryCollection('friends').first())
+const friends = computed(() => data.value?.body ?? [])
 
 definePageMeta({
-  title: 'Friends',
+  title: 'Friends'
+})
+
+useSeoMeta({
   description: 'List of my friends who also blog.'
 })
 </script>

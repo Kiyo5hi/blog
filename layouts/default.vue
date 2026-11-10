@@ -7,7 +7,7 @@
     </div>
     <AppFooter class="bg-white dark:bg-slate-800 bg-opacity-80 shadow-md" />
     <AppButton class="bg-slate-200 dark:bg-slate-700 shadow-md fixed bottom-5 right-5" highlight>
-      <NuxtLink to="#top">
+      <NuxtLink to="#top" aria-label="Back to top">
         <ArrowUpIcon class="w-10 h-10 p-1" />
       </NuxtLink>
     </AppButton>

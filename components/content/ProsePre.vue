@@ -6,24 +6,30 @@
     >
       {{ language }}
     </span>
-    <slot />
+    <pre :class="$props.class" v-bind="$attrs"><slot /></pre>
   </div>
 </template>
 
 <script setup lang="ts">
+defineOptions({
+  inheritAttrs: false
+})
+
 withDefaults(
   defineProps<{
-    code?: string,
-    language?: string | null,
-    filename?: string | null,
-    highlights?:() => number[],
+    code?: string
+    language?: string | null
+    filename?: string | null
+    highlights?: number[]
     meta?: string | null
+    class?: string | null
   }>(), {
     code: '',
     language: null,
     filename: null,
     highlights: () => [],
-    meta: null
+    meta: null,
+    class: null
   }
 )
 </script>
