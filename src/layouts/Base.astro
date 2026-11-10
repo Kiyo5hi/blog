@@ -1,0 +1,73 @@
+---
+import '../styles/global.css'
+import { site } from '../lib/site'
+
+interface Props { title: string; description?: string; noindex?: boolean }
+const { title, description = site.description, noindex = false } = Astro.props
+const path = Astro.url.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '').replace(/\/$/, '') || '/'
+const canonical = new URL(path, Astro.site)
+const nav = [
+  ['Home', '/'], ['My Love', 'https://gmwe.kiyo5hi.com'],
+  ['Friends', '/friends'], ['About', 'https://kiyo5hi.com']
+]
+---
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <title>{title} | {site.name}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:type" content={path.startsWith('/posts/') ? 'article' : 'website'} />
+    <meta property="og:title" content={`${title} | ${site.name}`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    {noindex && <meta name="robots" content="noindex" />}
+    <slot name="head" />
+    <script is:inline>
+      // Preserve Nuxt's saved preference without a framework runtime.
+      (() => {
+        let preference = 'system';
+        try { preference = localStorage.getItem('nuxt-color-mode') || 'system'; } catch {}
+        const media = matchMedia('(prefers-color-scheme: dark)');
+        const update = () => {
+          const dark = preference === 'dark' || (preference !== 'light' && media.matches);
+          document.documentElement.classList.toggle('dark', dark);
+          document.documentElement.classList.toggle('light', !dark);
+        };
+        update();
+        media.addEventListener('change', update);
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-slate-200 dark:bg-slate-900 dark:text-white">
+    <header id="top" class="bg-white dark:bg-slate-800 bg-opacity-80 shadow-md px-4 h-24 md:h-16 flex flex-col md:flex-row items-center justify-center">
+      <a href="/" class="p-2 flex items-center rounded-lg transition hover:bg-gray-200 dark:hover:bg-slate-700 hover:scale-105">
+        <img src="/logo.svg" alt="" width="24" height="24" class="mr-2" />
+        <span class="font-bold text-lg">{site.name}</span>
+      </a>
+      <nav aria-label="Main navigation" class="flex items-center text-slate-400 md:flex-1 md:justify-end">
+        {nav.map(([label, href], index) => <span>
+          <a class="styled-link" href={href}>{label}</a>
+          {index + 1 < nav.length && <span class="mx-1" aria-hidden="true">|</span>}
+        </span>)}
+      </nav>
+    </header>
+    <main class="mx-auto lg:w-[1024px] p-4"><slot /></main>
+    <footer class="bg-white dark:bg-slate-800 bg-opacity-80 shadow-md flex flex-col md:flex-row items-center gap-3 justify-around py-8 text-slate-400 text-center">
+      <span>Copyright © 2022 - {new Date().getFullYear()}{' '}
+        <a class="styled-link text-black dark:text-white" href="/">{site.name}</a>
+      </span>
+      <span>Powered by <a class="styled-link text-black dark:text-white" href="https://astro.build">Astro</a>{' '}
+        • Designed by <a class="styled-link text-black dark:text-white" href="https://kiyo5hi.com">Kiyoshi</a>
+      </span>
+    </footer>
+    <a href="#top" aria-label="Back to top" class="rounded-lg bg-slate-200 dark:bg-slate-700 shadow-md fixed bottom-5 right-5 hover:bg-gray-200 dark:hover:bg-slate-700">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="w-10 h-10 p-1" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12 7.5-7.5m0 0 7.5 7.5M12 4.5v15" /></svg>
+    </a>
+  </body>
+</html>

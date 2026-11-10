@@ -1,0 +1,15 @@
+---
+import { readFileSync } from 'node:fs'
+import { parse } from 'yaml'
+import { z } from 'astro/zod'
+import Base from '../layouts/Base.astro'
+import Profile from '../components/Profile.astro'
+const { body: friends } = z.object({ body: z.array(z.object({
+  name: z.string(), url: z.url(), description: z.string().optional(), avatar: z.url().optional()
+})) }).parse(parse(readFileSync('content/friends.yaml', 'utf8')))
+---
+<Base title="Friends" description="List of my friends who also blog.">
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+    {friends.map(friend => <a href={friend.url} class="col-span-1 h-32"><Profile {...friend} highlight /></a>)}
+  </div>
+</Base>

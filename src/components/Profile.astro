@@ -1,0 +1,12 @@
+---
+interface Props { name: string; avatar?: string; description?: string; vertical?: boolean; highlight?: boolean }
+const { name, avatar, description, vertical, highlight } = Astro.props
+---
+<div class:list={['card flex items-center gap-4 p-4 h-full transition', vertical ? 'flex-col text-center' : 'flex-row', { 'hover:bg-gray-200 dark:hover:bg-slate-700': highlight }]}>
+  <img class="h-24 w-24 rounded-full" src={avatar || `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}`} alt={`${name}'s profile picture`} width="96" height="96" loading="lazy" />
+  <div class="flex-1 h-full w-full min-w-0">
+    <div class="text-lg font-bold">{name}</div>
+    {description && <div class="text-slate-400">{description}</div>}
+    <slot />
+  </div>
+</div>

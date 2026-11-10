@@ -1,4 +1,4 @@
-name: Continuos Integration
+name: Continuous Integration
 
 on:
   push:
@@ -9,8 +9,8 @@ on:
     types: ["opened", "edited", "reopened", "synchronize"]
 
 jobs:
-  check_syntax_and_format:
-    name: Check Syntax and Format
+  validate:
+    name: Validate static site
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -21,11 +21,14 @@ jobs:
           node-version: 24.22.2
       - name: Checkout code
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          persist-credentials: false
       - name: Install locked dependencies
         run: |
           corepack enable pnpm
           pnpm install --frozen-lockfile
       - name: Build the Project
-        run: pnpm run build
-      - name: Run ESLint
-        run: pnpm run lint
+        run: pnpm run check && pnpm run build
+      - name: Verify content, URLs and static output
+        run: pnpm test

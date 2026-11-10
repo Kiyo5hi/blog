@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { @apply scroll-smooth; }
+html.light { color-scheme: light; }
+html.dark { color-scheme: dark; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@layer components {
+  .card { @apply bg-white dark:bg-slate-800 shadow-md rounded-lg; }
+  .styled-link { @apply hover:text-blue-500 dark:hover:text-blue-500; }
+}
+/* Shiki emits real newlines; block spans would double the line spacing. */
+.katex-display { @apply overflow-x-auto overflow-y-hidden; }
+.prose pre { position: relative; }
+.prose pre::before {
+  content: attr(data-language);
+  @apply uppercase absolute top-0 right-2 opacity-50;
+}
+html.dark .astro-code, html.dark .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
