@@ -20,3 +20,6 @@ dist
 # Ignore all local history of files
 .history
 .ionide
+
+# Nuxt Content local database
+.data

@@ -28,10 +28,10 @@
 
 <script lang="ts" setup>
 withDefaults(defineProps<{
-    name: string,
-    avatar?: string,
-    description?: string
-    isVertical?: boolean
+  name: string
+  avatar?: string
+  description?: string
+  isVertical?: boolean
 }>(), {
   description: undefined,
   isVertical: false,

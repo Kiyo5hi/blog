@@ -24,5 +24,5 @@
 
 <script setup lang=ts>
 const year = new Date().getFullYear()
-const { siteName } = useRuntimeConfig().public
+const { name: siteName } = useSiteConfig()
 </script>

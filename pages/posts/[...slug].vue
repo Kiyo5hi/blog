@@ -1,19 +1,16 @@
 <template>
   <div class="flex flex-col gap-4">
     <AppCard class="px-6 py-4">
-      <article class="prose max-w-none dark:prose-invert prose-pre:shadow-md">
-        <ContentDoc v-slot="{ doc }: { doc: ParsedContent }" :head="false">
-          <h1>{{ doc.title }}</h1>
-          <p class="text-slate-400 flex flex-row gap-2">
-            <span>{{ formatDate(doc.createdAt) }}</span>
-            <span>|</span>
-            <span>{{ doc.category }}</span>
-            <span>|</span>
-            <span>{{ doc.readingTime.text }}</span>
-          </p>
-          <p> {{ doc.excerpt }}</p>
-          <ContentRenderer :value="doc" />
-        </ContentDoc>
+      <article v-if="post" class="prose max-w-none dark:prose-invert prose-pre:shadow-md">
+        <h1>{{ post.title }}</h1>
+        <p class="text-slate-400 flex flex-row gap-2">
+          <span>{{ formatDate(post.createdAt) }}</span>
+          <span>|</span>
+          <span>{{ post.category }}</span>
+          <span>|</span>
+          <span>{{ post.readingTime.text }}</span>
+        </p>
+        <ContentRenderer :value="post" />
       </article>
     </AppCard>
     <PostSurrounding :prev="prev" :next="next" />
@@ -24,18 +21,25 @@
 </template>
 
 <script setup lang="ts">
-import { ParsedContent } from '@nuxt/content/dist/runtime/types'
-
 const { path } = useRoute()
 
-const { title, excerpt } = await queryContent('/posts')
-  .where({ _path: path })
-  .findOne()
+const { data: post } = await useAsyncData(`post-${path}`, () => queryCollection('posts')
+  .path(path)
+  .first()
+)
 
-const [prev, next] = await queryContent('/posts')
-  .only(['title', '_path'])
-  .sort({ createdAt: -1 })
-  .findSurround(path)
+if (!post.value) {
+  throw createError({ statusCode: 404, statusMessage: 'Page Not Found', fatal: true })
+}
+
+const { data: surround } = await useAsyncData(`post-surround-${path}`, () => queryCollectionItemSurroundings(
+  'posts',
+  path,
+  { fields: ['title'] }
+).order('createdAt', 'DESC'))
+
+const prev = computed(() => surround.value?.[0] ?? null)
+const next = computed(() => surround.value?.[1] ?? null)
 
 function formatDate (date: string) {
   return new Date(date).toLocaleDateString('en-US', {
@@ -46,14 +50,8 @@ function formatDate (date: string) {
   })
 }
 
-useHead({
-  title,
-  meta: [{
-    name: 'title',
-    content: title
-  }, {
-    name: 'description',
-    content: excerpt
-  }]
+useSeoMeta({
+  title: post.value.title,
+  description: post.value.description
 })
 </script>
